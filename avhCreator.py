@@ -70,7 +70,7 @@ def new_hosts(domain):
     newline()
 
     msg(" Activating New Virtual Host ")
-    os.system("sudo a2dissite 000-default.conf")
+    # os.system("sudo a2dissite 000-default.conf")
     os.system("sudo a2ensite "+domain+".conf")
 
     newline()
