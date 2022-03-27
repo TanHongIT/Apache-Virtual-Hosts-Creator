@@ -5,10 +5,10 @@ import os
 os.system("clear")
 
 def msg(stat):
-    print '\033[1;42m'+'\033[1;37m'+stat+'\033[1;m'+'\033[1;m'
+    print ('\033[1;42m'+'\033[1;37m'+stat+'\033[1;m'+'\033[1;m')
 
 def newline():
-    print ""
+    print ("")
 
 def new_hosts(domain):
     msg(" What would be the public directory name? \n - Press enter to keep default name (\"public\") ")
@@ -17,9 +17,9 @@ def new_hosts(domain):
     # Chceck and set name of the public directory.
     if public_dir == "":
         public_dir = "public"
-    
+
     newline()
-        
+
     # Define the webserver parent directory
     msg(" What would be the server parent directory? \n - Press enter to keep \"/var/www/\" as default location ")
     server_parent_dir = raw_input()
@@ -85,15 +85,15 @@ def new_hosts(domain):
     if host_flag == 0:
         os.system("sudo sed -i -e '1i127.0.1.1   "+domain+"\' \"/etc/hosts\"")
     else:
-        print " Skipped! "
+        print (" Skipped! ")
 
-    print "\nSuccess! Please visit http://"+domain+"/ from any web browser\n\n"
+    print ("\nSuccess! Please visit http://"+domain+"/ from any web browser\n\n")
 
 host_flag = 0
 
 newline()
 
-print "\n Welcome to Apache Virtual Hosts Creator\n - This script will setup a Apache Virtual Hosts for you\n - All you have to do, answer few questions\n - Make sure you have Apache configured\n"
+print ("\n Welcome to Apache Virtual Hosts Creator\n - This script will setup a Apache Virtual Hosts for you\n - All you have to do, answer few questions\n - Make sure you have Apache configured\n")
 
 newline()
 
