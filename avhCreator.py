@@ -39,6 +39,15 @@ def new_hosts(domain):
 
     newline()
 
+    msg(" Do you want disable 000-default site? (Y or N - Enter to skip it.)")
+    a2dissite_default = input()
+    if (a2dissite_default == "Y" or a2dissite_default == "y" or a2dissite_default == "yes" or a2dissite_default == "YES"):
+        os.system("sudo a2dissite 000-default.conf")
+    else:
+        msg( "Disable 000-default site skipped" )
+
+    newline()
+
     msg(" Change directory permissions? \n It will give current user permission for this vhost and permit read access. \n If you want to change permission then type Y and press enter \n If you are not sure then press enter and skip this step")
     uper = input()
     if (uper == "Y" or uper == "y"):
@@ -70,7 +79,6 @@ def new_hosts(domain):
     newline()
 
     msg(" Activating New Virtual Host ")
-    # os.system("sudo a2dissite 000-default.conf")
     os.system("sudo a2ensite "+domain+".conf")
 
     newline()

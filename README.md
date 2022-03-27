@@ -38,8 +38,8 @@ time to talk ;) the script itself is really descriptive so you should get the id
 ![domain settings](http://i.imgur.com/ZrOaPEe.png)
 ![viirtual domain created successfully](http://i.imgur.com/K7Y6MdW.png)
 
-Time to celebrate :D
---------------------
+# Time to celebrate :D
+
 ![viirtual domain created successfully](http://i.imgur.com/7xv79F6.png)
 
 Here is a video on how to use it at <a href="https://www.youtube.com/watch?v=-ruvoYbSbIU">YouTube</a>
