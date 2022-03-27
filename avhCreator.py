@@ -12,23 +12,23 @@ def newline():
 
 def new_hosts(domain):
     msg(" What would be the public directory name? \n - Press enter to keep default name (\"public\") ")
-    public_dir = raw_input()
+    public_dir = input()
 
     # Chceck and set name of the public directory.
     if public_dir == "":
         public_dir = "public"
-
+    
     newline()
-
+        
     # Define the webserver parent directory
     msg(" What would be the server parent directory? \n - Press enter to keep \"/var/www/\" as default location ")
-    server_parent_dir = raw_input()
+    server_parent_dir = input()
     if server_parent_dir == "":
         server_parent_dir = "/var/www/"
     else:
         if os.path.exists(server_parent_dir) == False:
             msg(" Parent directory (\""+server_parent_dir+"\") was not found! \n Please enter server parent directory again: ")
-            server_parent_dir = raw_input()
+            server_parent_dir = input()
         else:
             msg(" Server parent directory has changed ")
 
@@ -40,7 +40,7 @@ def new_hosts(domain):
     newline()
 
     msg(" Change directory permissions? \n It will give current user permission for this vhost and permit read access. \n If you want to change permission then type Y and press enter \n If you are not sure then press enter and skip this step")
-    uper = raw_input()
+    uper = input()
     if (uper == "Y" or uper == "y"):
         msg(" Granting Proper Permissions ")
         os.system("sudo chown -R $USER:$USER "+server_parent_dir+domain+"/"+public_dir)
@@ -98,11 +98,11 @@ print ("\n Welcome to Apache Virtual Hosts Creator\n - This script will setup a 
 newline()
 
 msg(" What would be the domain name? ")
-domain = raw_input()
+domain = input()
 
 if os.path.exists("/var/www/"+domain):
     msg(" IMPORTANT: It seems that you have already configured a virtual hosts with the same domain name \n If you continue then all your data of http://"+domain+"/ will be overwritten and can not be undo \n Continue? (yes/no) ")
-    flag = raw_input()
+    flag = input()
     host_flag = 1
 
     if (flag == "no" or flag == ""):
